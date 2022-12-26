@@ -6,9 +6,9 @@
   "scripts": {
     "build": "/bin/sh tsc_eval.sh",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
-    "start": "node .",
+    "start": "npm run predev && npx node .",
     "predev": "npm run build && npm run db:reset",
-    "dev": "nodemon --watch \"./src/**\" ./src/server.ts"
+    "dev": "npm run predev && nodemon --watch \"./src/**\" ./src/server.ts"
   },
   "author": "Douglas Aguiar",
   "license": "ISC",

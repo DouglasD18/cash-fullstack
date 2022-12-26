@@ -19,7 +19,6 @@ services:
       db
     environment:
       - APP_PORT=3001
-      - JWT_SECRET=jwt_secret
       - DB_USER=root
       - DB_PASS=password
       - DB_HOST=db

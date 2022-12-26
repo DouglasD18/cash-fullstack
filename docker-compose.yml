@@ -1,13 +1,15 @@
 version: '3.9'
 services:
   frontend:
+    container_name: app_frontend
     build: ./frontend
     ports:
-      - 3000:3000
+      - 5173:5173
     platform: linux/x86_64
     working_dir: /app-frontend
     depends_on:
-      backend
+      - backend
+
   backend:
     container_name: app_backend
     build: ./backend
@@ -16,13 +18,14 @@ services:
     platform: linux/x86_64
     working_dir: /app-backend
     depends_on:
-      db
+      - db
     environment:
       - APP_PORT=3001
       - DB_USER=root
       - DB_PASS=password
       - DB_HOST=db
       - DB_PORT=3306
+
   db:
     image: mysql:8.0.21
     container_name: db

@@ -39,7 +39,7 @@ module.exports = {
         unique: true,
         type: Sequelize.STRING(255),
       },
-      emissonDate: {
+      emissionDate: {
         defaultValue: null,
         type: Sequelize.STRING(255),
       },

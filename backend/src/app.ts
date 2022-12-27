@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import ErrorHandler from './middlewares/ErrorHandler';
 
 class App {
   public app: express.Express;
@@ -10,6 +11,7 @@ class App {
     this.config();
 
     this.app.get('/', (req, res) => res.json({ ok: true }));
+    this.app.use(ErrorHandler)
   }
 
   private config():void {

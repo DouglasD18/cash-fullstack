@@ -112,11 +112,11 @@ module.exports = {
         }
       },
       orderStatusBuyer: {
-        defaultValue: 0,
+        defaultValue: '0',
         type: Sequelize.STRING(255),
       },
       orderStatusProvider: {
-        defaultValue: 0,
+        defaultValue: '0',
         type: Sequelize.STRING(255),
       },
       deliveryReceipt: {

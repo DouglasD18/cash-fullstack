@@ -25,7 +25,7 @@ module.exports = {
       },
       vDup: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.STRING(255),
       },
       availableToMarket: {
         defaultValue: 1,

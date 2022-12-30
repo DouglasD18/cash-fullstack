@@ -3,28 +3,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.App = void 0;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
+const NotaFiscal_router_1 = require("./router/NotaFiscal.router");
+const ErrorHandler_1 = __importDefault(require("./middlewares/ErrorHandler"));
 class App {
     constructor() {
-        this.app = (0, express_1.default)();
-        this.config();
-        this.app.get('/', (req, res) => res.json({ ok: true }));
+        this.express = (0, express_1.default)();
+        this.middlewares();
+        this.routes();
     }
-    config() {
-        const accessControl = (_req, res, next) => {
-            res.header('Access-Control-Allow-Origin', '*');
-            res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,OPTIONS,PUT,PATCH');
-            res.header('Access-Control-Allow-Headers', '*');
-            next();
-        };
-        this.app.use(express_1.default.json());
-        this.app.use(accessControl);
-        this.app.use((0, cors_1.default)());
+    middlewares() {
+        this.express.use(express_1.default.json());
+        this.express.use((0, cors_1.default)());
+        this.express.use(ErrorHandler_1.default);
     }
-    start(PORT) {
-        this.app.listen(PORT, () => console.log(`Running on port ${PORT}`));
+    routes() {
+        this.express.use(NotaFiscal_router_1.router);
     }
 }
-exports.App = App;
+exports.default = new App().express;

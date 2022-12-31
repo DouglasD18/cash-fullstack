@@ -91,5 +91,3 @@ export class NotaFiscalService {
     return notas as unknown as INotaFiscal[];
   }
 }
-
-// orderNumber, buyer-name, provider-name, order-emissionDate, order-value, order-orderStatusBuyer(Decodificado)

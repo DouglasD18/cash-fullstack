@@ -1,13 +1,9 @@
 FROM node:18.12.1-alpine 
 
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
+WORKDIR /app-frontend
 
 COPY . .
 
-EXPOSE 8080
+RUN npm install
 
 CMD [ "npm", "run", "serve" ]

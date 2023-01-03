@@ -1,5 +1,4 @@
 export interface IOrder {
-  id: number,
   orderNumber: string,
   buyerId: number,
   providerId: number,
@@ -9,7 +8,6 @@ export interface IOrder {
 }
 
 export interface INotaFiscal {
-  id: number,
   orderNumber: string,
   buyerName: string,
   providerName: string,

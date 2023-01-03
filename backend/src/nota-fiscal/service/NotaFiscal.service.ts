@@ -53,7 +53,6 @@ export class NotaFiscalService {
     const orders = await Order.findAll();
 
     const ordersValues = orders.map((order) =>({ 
-      id: order.id,
       orderNumber: order.orderNumber,
       buyerId: order.buyerId,
       providerId: order.providerId,
@@ -76,7 +75,6 @@ export class NotaFiscalService {
       const buyerName = await this.getBuyerById(buyerId);
       const providerName = await this.getProviderById(providerId);
       return {
-        id: order.id,
         orderNumber: order.orderNumber,
         buyerName,
         providerName,

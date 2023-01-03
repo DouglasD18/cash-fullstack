@@ -55,7 +55,7 @@ export default defineComponent({
           }}
         </td>
         <td>{{ nota.orderStatus }}</td>
-        <td><button>Dados do cedente</button></td>
+        <td><button class="button" disabled>Dados do cedente</button></td>
       </tr>
     </table>
   </div>
@@ -64,5 +64,17 @@ export default defineComponent({
 <style scoped>
 #notas-painel {
   padding: 5%;
+}
+
+tr th, td {
+  padding: 2.5px;
+  width: 120px;
+  height: 20px;
+  font-size: 14px;
+}
+
+td .button {
+  border-width: 1px;
+  border-radius: 25px;
 }
 </style>

@@ -74,11 +74,13 @@ export class NotaFiscalService {
       const orderStatus = this.decodeStatus(statusBuyer);
       const buyerName = await this.getBuyerById(buyerId);
       const providerName = await this.getProviderById(providerId);
+      const splited = order.emissionDate.split('-');
+      const emissionDate = `${splited[2].substring(0, 2)}/${splited[1]}/${splited[0]}`;
       return {
         orderNumber: order.orderNumber,
         buyerName,
         providerName,
-        emissionDate: order.emissionDate,
+        emissionDate,
         value: order.value,
         orderStatus,
       }

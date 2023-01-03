@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div class="container-fluid">
     <header>
       <img
         src="https://cashforce.com.br/wp-content/themes/cashforce/assets/images/logo-cashforce.svg"
@@ -28,26 +28,21 @@ export default class Page extends Vue {}
 </script>
 
 <style scoped>
-div#content {
-  width: 0;
-  height: 0;
-  position: absolute;
-}
-
 header {
-  position: fixed;
+  position: absolute;
   height: 10%;
   width: 100%;
   padding: 1%;
 }
 
 header img {
-  width: 20%;
+  width: 10%;
 }
 
 main.container {
   margin: 3%;
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: flex-start;
 }

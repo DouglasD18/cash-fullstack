@@ -86,8 +86,6 @@ export class NotaFiscalService {
       }
     }));
 
-    console.log("Notas!", notas);
-
     return notas as unknown as INotaFiscal[];
   }
 }

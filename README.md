@@ -11,7 +11,7 @@ Front-end:
 > Desenvolvido usando: Vue, TypeScript, Axios, Eslint, Prettier
 
 Back-end:
-> Desenvolvido usando: NodeJS, ExpressJS, TypeScript, MySQL, Sequelize, Cors, Nodemon, Dotenv
+> Desenvolvido usando: NodeJS, ExpressJS, TypeScript, MySQL, Sequelize, Cors, Nodemon, Dotenv, Jest, Mocha, Sinon, Chai
 
 ## Rodando com Docker
 
@@ -43,13 +43,19 @@ npm install
 ``` 
 ### Executando aplicação
 
-* Para rodar o back-end:
+* Para rodar o backend:
 
   ```
   cd backend/ && npm start
   ```
 
-* Para rodar o front-end:
+* Para rodar os testes do backend:
+
+  ```
+  cd backend/ && npm run test
+  ```
+
+* Para rodar o frontend:
 
   ```
     cd frontend/ && npm run serve

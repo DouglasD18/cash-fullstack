@@ -1,5 +1,7 @@
 # Fullstack Cashforce
 
+![Aplicação rodando](cashforce-view.png)
+
 # Contexto
 Projeto de uma aplicação fullstack com api de consulta em banco de dados MySQL, através da ORM Sequelize, para vizualição de Notas Fiscais registradas no mesmo.
 

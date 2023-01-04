@@ -26,10 +26,10 @@ export default defineComponent({
 
 <template>
   <div id="notas-painel">
-    <h2>
+    <h3>
       <img src="../assets/handshake.svg" alt="Aperto de mãos." />
       Notas Fiscais
-    </h2>
+    </h3>
     <p>Vizualize as notas fiscais que você tem.</p>
     <table>
       <tr>
@@ -46,7 +46,7 @@ export default defineComponent({
         <td>{{ nota.buyerName }}</td>
         <td>{{ nota.providerName }}</td>
         <td>{{ nota.emissionDate }}</td>
-        <td>
+        <td class="green">
           {{
             Number(nota.value).toLocaleString("pt-BR", {
               style: "currency",
@@ -54,7 +54,7 @@ export default defineComponent({
             })
           }}
         </td>
-        <td>{{ nota.orderStatus }}</td>
+        <td class="green">{{ nota.orderStatus.toUpperCase() }}</td>
         <td><button class="button" disabled>Dados do cedente</button></td>
       </tr>
     </table>
@@ -62,19 +62,47 @@ export default defineComponent({
 </template>
 
 <style scoped>
-#notas-painel {
-  padding: 5%;
+img {
+  width: 1.3em;
 }
 
-tr th, td {
-  padding: 2.5px;
-  width: 120px;
-  height: 20px;
-  font-size: 14px;
+p {
+  color: #a1a8b8;
+}
+
+#notas-painel {
+  width: 75vw;
+  height: 100vh;
+  font-size: large;
+  background-color: #ffffff;
+}
+
+tr {
+  height: 60px;
+  border: 1px solid #a1a8b8;
+}
+
+th, td {
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+th {
+  color: #a1a8b8;
+}
+td.green {
+  color: #00ad8c;
 }
 
 td .button {
-  border-width: 1px;
+  height: 30px;
+  width: 130px;
+  padding: 2px;
+  border: solid 1px;
   border-radius: 25px;
+  box-sizing: border-box;
+  background-color: #fbfdfe;
+  color: #a1a8b8;
 }
 </style>

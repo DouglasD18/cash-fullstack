@@ -18,6 +18,5 @@ export default class App extends Vue {}
 Page {
   margin: 0;
   padding: 0;
-  position: absolute;
 }
 </style>

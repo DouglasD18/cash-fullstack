@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <header>
       <img
         src="https://cashforce.com.br/wp-content/themes/cashforce/assets/images/logo-cashforce.svg"
@@ -9,6 +9,7 @@
     <main class="container">
       <aside id="aside-img">
         <img src="../assets/handshake.svg" alt="Ícone de aperto de mãos" />
+        Notas Fiscais
       </aside>
       <NotasFiscais></NotasFiscais>
     </main>
@@ -28,30 +29,38 @@ export default class Page extends Vue {}
 </script>
 
 <style scoped>
+div {
+  display: flex;
+  flex-direction: column;
+  background-color: #fbfdfe;
+  overflow: hidden;
+}
+
 header {
-  position: absolute;
-  height: 10%;
+  height: 10vh;
   width: 100%;
-  padding: 1%;
+  display: flex;
+  justify-content: start;
 }
 
 header img {
-  width: 10%;
+  width: 12vw;
+  margin-left: 3vw;
 }
 
 main.container {
-  margin: 3%;
+  margin: 1vh 3vw;
   display: flex;
   position: relative;
   flex-direction: row;
   justify-content: flex-start;
 }
 
-aside#aside-img {
-  width: 100%;
-}
-
-aside#aside-img img {
-  width: 30px;
+#aside-img {
+  width: 10vw;
+  margin-top: 2vh;
+  margin-right: 5vw;
+  height: 10vh;
+  color: #00ad8c;
 }
 </style>
